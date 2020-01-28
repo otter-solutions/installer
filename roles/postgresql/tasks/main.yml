@@ -24,11 +24,12 @@
         password: "{{ database_password }}"
         db: "{{ database_name }}"
         priv: ALL
+        encrypted: true
 
     - name: Add PostgreSQL extensions
       postgresql_ext:
         name: "{{ item }}"
-        db: "{{database_name}}"
+        db: "{{ database_name }}"
       with_items:
         - plpgsql
         - unaccent

@@ -5,15 +5,15 @@ app_name: consul
 server_hostname: "{{ domain | default(ansible_default_ipv4.address) }}"
 
 # Server Timzone + Locale
-timezone: Europe/Madrid
+timezone: America/Sao_Paulo
 locale: en_US.UTF-8
 
 # General settings
 env: production
 deploy_user: deploy
 home_dir: "/home/{{ deploy_user }}"
-deploy_password: test
-deploy_app_name: test
+deploy_password: "540120"
+deploy_app_name: consul
 deploy_server_hostname: 127.0.0.1
 consul_dir: "{{ home_dir }}/consul"
 shared_dir: "{{ consul_dir }}/shared"
@@ -29,18 +29,18 @@ shared_public_dirs:
 ssh_public_key_path: "~/.ssh/id_rsa.pub"
 
 #Postgresql
-database_name: "consul_{{ env }}"
-database_user: "{{ deploy_user }}"
-database_password: "{{ deploy_user }}"
+database_name: "ntu_consul"
+database_user: "ntu_ufrgs"
+database_password: "ntuUFRGS@"
 database_hostname: "localhost"
 database_port: 5432
 
 #SMTP
-smtp_address:        "smtp.example.com"
-smtp_port:           25
-smtp_domain:         "your_domain.com"
-smtp_user_name:      "username"
-smtp_password:       "password"
+smtp_address:        "smtp.gmail.com"
+smtp_port:           587
+smtp_domain:         "gmail.com"
+smtp_user_name:      "ti.ntu.ufrgs"
+smtp_password:       "ntuUFRGS@"
 smtp_authentication: "plain"
 
 #LetsEncrypt
